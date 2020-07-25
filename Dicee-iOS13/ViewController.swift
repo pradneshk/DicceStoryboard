@@ -9,12 +9,20 @@
 import UIKit
 
 class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+    
+    //IBOutlet referneces UI elements on story board. Never mdify directly use refeactor option.
+    @IBOutlet weak var diceImageView1: UIImageView!
+    @IBOutlet weak var diceImageView2: UIImageView!
+    
+    @IBAction func rollButtonPressed(_ sender: UIButton) {
+        
+        let imageList = [ #imageLiteral(resourceName: "DiceOne"), #imageLiteral(resourceName: "DiceTwo"), #imageLiteral(resourceName: "DiceThree"),#imageLiteral(resourceName: "DiceFour"),#imageLiteral(resourceName: "DiceFive"),#imageLiteral(resourceName: "DiceSix") ]
+        
+        //Random number generator: Int.random(in: 0...5)
+        diceImageView1.image = imageList.randomElement()
+        diceImageView2.image = imageList.randomElement()
+        
     }
-
-
+    
 }
 
